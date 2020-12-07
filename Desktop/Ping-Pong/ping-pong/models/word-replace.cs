@@ -9,12 +9,12 @@ public class Words {
 
     for (int i = 0; i <= userNum ; i++) {
       userList.Add(i.ToString());
-      if (i % 3 == 0) {
+      if (i % 3 == 0 && i % 5 == 0) {
+        userList[i] = "ping-pong";
+      } else if (i % 3 == 0) {
         userList[i] = "ping";
       } else if (i % 5 == 0) {
         userList[i] = "pong";
-      } else if ((i % 3 == 0) && (i % 5 == 0)) {
-        userList[i] = "ping-pong";
       }
     Console.WriteLine(userList[i]);
     }
