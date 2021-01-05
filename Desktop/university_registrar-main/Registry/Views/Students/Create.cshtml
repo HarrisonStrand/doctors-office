@@ -1,0 +1,24 @@
+@{
+  Layout = "_Layout";
+}
+
+@model Registry.Models.Student
+
+<h4>Enroll a new student</h4>
+
+@using (Html.BeginForm())
+{
+    @Html.LabelFor(model => model.StudentName)
+    @Html.TextBoxFor(model => model.StudentName)
+
+    @Html.Label("Select Course")
+    @Html.DropDownList("CourseId")
+
+    @Html.Label("Date of Enrollment")
+    @Html.TextBoxFor(model => model.DOE, new { @type = "date"})
+
+    <input type="submit" value="Enroll new student" class="btn btn-default" />
+}
+<p>@Html.ActionLink("Show all students", "Index")</p>
+
+<p>@Html.ActionLink("Home", "Index", "Home")</p>
