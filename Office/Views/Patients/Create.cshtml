@@ -1,0 +1,24 @@
+@{
+  Layout = "_Layout";
+}
+
+@model Office.Models.Patient
+
+<h4>Enroll a new Patient</h4>
+
+@using (Html.BeginForm())
+{
+    @Html.LabelFor(model => model.PatientName)
+    @Html.TextBoxFor(model => model.PatientName)
+
+    @Html.Label("Select Doctor")
+    @Html.DropDownList("DoctorId")
+
+    @Html.Label("Date of Birth")
+    @Html.TextBoxFor(model => model.DOB, new { @type = "date"})
+
+    <input type="submit" value="Enroll new Patient" class="btn btn-default" />
+}
+<p>@Html.ActionLink("Show all Patients", "Index")</p>
+
+<p>@Html.ActionLink("Home", "Index", "Home")</p>

@@ -23,7 +23,7 @@ namespace Office.Controllers
 
     public ActionResult Create()
     {
-      ViewBag.DoctorId = new SelectList(_db.Doctors, "DoctorId", "DoctorName");
+      ViewBag.DoctorId = new SelectList(_db.Doctors, "DoctorId", "DoctorName", "DoctorSpecialty");
       return View();
     }
 

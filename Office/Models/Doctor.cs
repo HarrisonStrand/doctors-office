@@ -11,7 +11,7 @@ namespace Office.Models
     }
     public int DoctorId { get; set; }
     public string DoctorName { get; set; }
-    public string DoctorSpeciality { get; set; }
+    public string DoctorSpecialty { get; set; }
 
     public virtual ICollection<DoctorPatient> Patients { get; set; }
   }
