@@ -1,0 +1,26 @@
+@{
+  Layout = "_Layout";
+}
+
+@using Office.Models;
+@model List<Office.Models.Doctor>;
+
+<h1>Doctors | Specialties</h1>
+<hr />
+@if (@Model.Count == 0)
+{
+<h3>There are no Doctors hired.</h3>
+}
+
+@foreach (Doctor doctor in Model)
+{
+  <li>@Html.ActionLink($"{doctor.DoctorName}", "Details", new { id = doctor.DoctorId })</li>
+  //<li>@Html.DisplayFor(model => model.DoctorSpecialty)</li>
+  @using (Html.BeginForm("Delete", "Doctors", FormMethod.Get))
+  {
+    @Html.Hidden("id", @doctor.DoctorId)
+    <input type="submit" value="Remove Doctor" class="btn btn-default"/>
+  }
+}
+<br><p>@Html.ActionLink("Add a new Hire", "Create")</p>
+<p>@Html.ActionLink("Home", "Index", "Home")</p>
